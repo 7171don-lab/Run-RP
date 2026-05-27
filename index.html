@@ -3,9 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Run RP</title>
+
+<title>RUN RP</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -16,47 +18,82 @@
 body{
     background:#0b0b0b;
     color:white;
-    overflow:hidden;
+    overflow-x:hidden;
 }
 
 .bg{
-    position:absolute;
+    position:fixed;
     width:100%;
-    height:100vh;
-    /* ЗАМЕНИТЕ ССЫЛКУ НИЖЕ НА ВАШ ФОН */
-    background:url('https://i.postimg.cc/NFy6yCDP/bfabc49d-ac06-4316-8f88-204ec98e4131.jpg') center/cover;
-    filter:blur(3px);
-    transform:scale(1.1);
+    height:100%;
+    background:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070') center/cover;
+    filter:blur(4px) brightness(0.3);
+    z-index:-2;
 }
 
 .overlay{
-    position:absolute;
+    position:fixed;
     width:100%;
-    height:100vh;
-    background:rgba(0,0,0,.65);
+    height:100%;
+    background:rgba(0,0,0,0.5);
+    z-index:-1;
 }
 
-.content{
-    position:relative;
-    z-index:2;
+header{
+    width:100%;
+    padding:20px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    backdrop-filter:blur(10px);
+    background:rgba(0,0,0,0.4);
+    z-index:999;
+}
+
+.logo{
+    font-size:32px;
+    font-weight:bold;
+    color:#ff6600;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    transition:.3s;
+    font-size:17px;
+}
+
+nav a:hover{
+    color:#ff6600;
+}
+
+.hero{
     height:100vh;
     display:flex;
+    flex-direction:column;
     justify-content:center;
     align-items:center;
-    flex-direction:column;
     text-align:center;
+    padding:20px;
 }
 
-h1{
+.hero h1{
     font-size:90px;
     color:#ff6600;
-    text-shadow:0 0 30px #ff6600;
+    text-shadow:0 0 25px #ff6600;
 }
 
-p{
-    margin-top:10px;
-    font-size:24px;
-    opacity:.8;
+.hero p{
+    margin-top:15px;
+    font-size:28px;
+    color:#ddd;
 }
 
 .buttons{
@@ -65,25 +102,54 @@ p{
     gap:20px;
 }
 
-a{
-    text-decoration:none;
-}
-
 .btn{
-    padding:15px 35px;
-    border-radius:12px;
+    padding:16px 40px;
+    border-radius:14px;
     background:#ff6600;
     color:white;
-    font-size:18px;
+    text-decoration:none;
+    font-size:20px;
     transition:.3s;
-    /* Добавляем это, чтобы кнопки не прыгали при нажатии */
-    display: inline-block;
 }
 
 .btn:hover{
-    transform:scale(1.05);
+    transform:scale(1.07);
     box-shadow:0 0 25px #ff6600;
 }
+
+.info{
+    width:100%;
+    padding:100px 10%;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:20px;
+    padding:30px;
+    backdrop-filter:blur(10px);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+    border-color:#ff6600;
+}
+
+.card h2{
+    margin-bottom:15px;
+    color:#ff6600;
+}
+
+footer{
+    text-align:center;
+    padding:40px;
+    color:#888;
+}
+
 </style>
 </head>
 
@@ -92,18 +158,54 @@ a{
 <div class="bg"></div>
 <div class="overlay"></div>
 
-<div class="content">
-    <h1>RUN RP</h1>
-    <p> RolePlay </p>
+<header>
 
-    <div class="buttons">
-        
-        <a href="https://discord.gg/dubPZn67jj" class="btn" target="_blank">DISCORD</a>
-        
-        <!-- ВСТАВЬТЕ СЮДА IP И ПОРТ ВАШЕГО СЕРВЕРА -->
-        <a href="rage://v/connect?ip=123.123.123.123:22005" class="btn">START</a>
-    </div>
+<div class="logo">RUN RP</div>
+
+<nav>
+<a href="index.html">Главная</a>
+<a href="start.html">Начать играть</a>
+<a href="rules.html">Правила</a>
+<a href="mods.html">Моды</a>
+<a href="news.html">Новости</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>RUN RP</h1>
+<p>Новый GTA 5 RolePlay сервер</p>
+
+<div class="buttons">
+<a href="#" class="btn">DISCORD</a>
+<a href="start.html" class="btn">START</a>
 </div>
+
+</section>
+
+<section class="info">
+
+<div class="card">
+<h2>🔥 Уникальный RP</h2>
+<p>Продуманная экономика, фракции, бизнесы и реалистичный RolePlay.</p>
+</div>
+
+<div class="card">
+<h2>🚓 Фракции</h2>
+<p>LSPD, EMS, FIB, банды, мафии и множество организаций.</p>
+</div>
+
+<div class="card">
+<h2>💰 Донат</h2>
+<p>Удобный магазин, кейсы, автомобили и премиум возможности.</p>
+</div>
+
+</section>
+
+<footer>
+RUN RP © 2025
+</footer>
 
 </body>
 </html>
