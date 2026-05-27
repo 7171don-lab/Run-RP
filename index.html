@@ -12,21 +12,24 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial;
+    font-family:Arial, sans-serif;
 }
 
 body{
-    background:#0b0b0b;
+    background:#080808;
     color:white;
     overflow-x:hidden;
 }
+
+/* ФОН */
 
 .bg{
     position:fixed;
     width:100%;
     height:100%;
-    background:url('https://i.postimg.cc/NFy6yCDP/bfabc49d-ac06-4316-8f88-204ec98e4131.jpg') center/cover;
-    filter:blur(4px) brightness(0.3);
+    background:url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=2070') center/cover;
+    filter:blur(5px) brightness(0.25);
+    transform:scale(1.1);
     z-index:-2;
 }
 
@@ -38,6 +41,8 @@ body{
     z-index:-1;
 }
 
+/* HEADER */
+
 header{
     width:100%;
     padding:20px 60px;
@@ -47,15 +52,17 @@ header{
     position:fixed;
     top:0;
     left:0;
-    backdrop-filter:blur(10px);
-    background:rgba(0,0,0,0.4);
     z-index:999;
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,0.35);
+    border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
 .logo{
-    font-size:32px;
+    font-size:34px;
     font-weight:bold;
     color:#ff6600;
+    text-shadow:0 0 20px #ff6600;
 }
 
 nav{
@@ -66,13 +73,15 @@ nav{
 nav a{
     color:white;
     text-decoration:none;
-    transition:.3s;
     font-size:17px;
+    transition:.3s;
 }
 
 nav a:hover{
     color:#ff6600;
 }
+
+/* HERO */
 
 .hero{
     height:100vh;
@@ -85,21 +94,26 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:90px;
+    font-size:110px;
     color:#ff6600;
-    text-shadow:0 0 25px #ff6600;
+    text-shadow:0 0 35px #ff6600;
 }
 
 .hero p{
     margin-top:15px;
     font-size:28px;
     color:#ddd;
+    max-width:800px;
 }
+
+/* BUTTONS */
 
 .buttons{
     margin-top:40px;
     display:flex;
     gap:20px;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 .btn{
@@ -108,18 +122,21 @@ nav a:hover{
     background:#ff6600;
     color:white;
     text-decoration:none;
-    font-size:20px;
+    font-size:19px;
     transition:.3s;
+    box-shadow:0 0 20px rgba(255,102,0,.4);
 }
 
 .btn:hover{
-    transform:scale(1.07);
-    box-shadow:0 0 25px #ff6600;
+    transform:translateY(-5px) scale(1.03);
+    box-shadow:0 0 30px #ff6600;
 }
+
+/* INFO BLOCKS */
 
 .info{
     width:100%;
-    padding:100px 10%;
+    padding:80px 10%;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
     gap:30px;
@@ -127,27 +144,62 @@ nav a:hover{
 
 .card{
     background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:20px;
-    padding:30px;
-    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.08);
+    border-radius:24px;
+    padding:35px;
+    backdrop-filter:blur(12px);
     transition:.3s;
 }
 
 .card:hover{
     transform:translateY(-10px);
     border-color:#ff6600;
+    box-shadow:0 0 25px rgba(255,102,0,.25);
 }
 
 .card h2{
-    margin-bottom:15px;
+    margin-bottom:18px;
     color:#ff6600;
+    font-size:28px;
 }
 
+.card p{
+    color:#ddd;
+    line-height:1.7;
+    font-size:17px;
+}
+
+/* FOOTER */
+
 footer{
+    padding:50px;
     text-align:center;
-    padding:40px;
-    color:#888;
+    color:#777;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+header{
+    padding:20px;
+    flex-direction:column;
+    gap:15px;
+}
+
+.hero h1{
+    font-size:70px;
+}
+
+.hero p{
+    font-size:20px;
+}
+
+nav{
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
 }
 
 </style>
@@ -164,10 +216,8 @@ footer{
 
 <nav>
 <a href="index.html">Главная</a>
-<a href="start.html">Начать играть</a>
 <a href="rules.html">Правила</a>
-<a href="mods.html">Моды</a>
-<a href="news.html">Новости</a>
+<a href="start.html">Начать играть</a>
 </nav>
 
 </header>
@@ -175,11 +225,21 @@ footer{
 <section class="hero">
 
 <h1>RUN RP</h1>
-<p>RolePlay </p>
+
+<p>
+Новый GTA 5 RolePlay сервер с уникальной атмосферой, реалистичным RP и продуманными системами.
+</p>
 
 <div class="buttons">
-<a href="https://discord.gg/uNFKT7bXaA" class="btn">DISCORD</a>
-<a href="start.html" class="btn">START</a>
+
+<a href="https://discord.gg/uNFKT7bXaA" class="btn">
+DISCORD
+</a>
+
+<a href="start.html" class="btn">
+START
+</a>
+
 </div>
 
 </section>
@@ -188,17 +248,44 @@ footer{
 
 <div class="card">
 <h2>🔥 Уникальный RP</h2>
-<p>Продуманная экономика, фракции, бизнесы и реалистичный RolePlay.</p>
+<p>
+Реалистичная экономика, проработанные системы, атмосфера настоящего GTA 5 RolePlay и постоянные обновления.
+</p>
 </div>
 
 <div class="card">
 <h2>🚓 Фракции</h2>
-<p>LSPD, EMS, FIB, банды, мафии и множество организаций.</p>
+<p>
+LSPD, EMS, FIB, Government, банды, мафии и десятки организаций с уникальным функционалом.
+</p>
 </div>
 
 <div class="card">
 <h2>💰 Донат</h2>
-<p>Удобный магазин, кейсы, автомобили и премиум возможности.</p>
+<p>
+Автомобили, кейсы, валюта, премиум возможности и удобный магазин прямо на сайте.
+</p>
+</div>
+
+<div class="card">
+<h2>📥 Начать играть</h2>
+<p>
+Подробная инструкция по установке GTA 5, RageMP/FiveM и запуску сервера для новичков.
+</p>
+</div>
+
+<div class="card">
+<h2>📰 Новости проекта</h2>
+<p>
+Следи за обновлениями, патчноутами, событиями, акциями и всеми новостями проекта.
+</p>
+</div>
+
+<div class="card">
+<h2>🛠 Моды и файлы</h2>
+<p>
+Скачивание модов, дополнительных файлов, лаунчера и необходимых ресурсов сервера.
+</p>
 </div>
 
 </section>
